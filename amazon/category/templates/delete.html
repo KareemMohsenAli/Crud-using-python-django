@@ -1,0 +1,12 @@
+{% extends 'base2.html'%}
+{%block 'main' %}
+<div class="text-center card ">
+    <h1> Add new post</h1>
+<form method="post" class="text-center" enctype="multipart/form-data">
+  {% csrf_token %}
+  <p>are u want to to delete {{category}}</p>
+  <button type="submit" class="btn btn-danger ">Delete</button>
+</form>
+<a class="btn btn-danger mt-3" href="{% url 'Categories' %}">go back</a>
+</div>
+{% endblock %}

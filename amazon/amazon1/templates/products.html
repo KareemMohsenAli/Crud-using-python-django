@@ -1,0 +1,23 @@
+{%extends 'base.html'%}
+
+{%block 'product' %}
+<div class="row ">
+  <a href="{% url 'create' %}"><button class="btn btn-danger">create</button></a>
+  {% for product in list %}
+  <div class="card col-3 p-5 text-center" >
+      <div class="card-body">
+          <!-- {{myproducts}} -->
+          <h5 class="card-title">{{product.name}}</h5>
+          <img width="200" height="200" src="{{product.get_image_url}}" alt="">
+          <p class="card-text"> price : {{product.price}} </p>
+          <p class="card-text"> description : {{product.description}} </p>
+          <div class="d-flex justify-content-center align-items-center">
+            <a  class="btn btn-danger me-2" href="{{product.get_show_url}}">View</a> 
+            <a class="btn btn-danger me-2" href="{{product.get_delete_url}}">delete</a>
+            <a class="btn btn-danger" href="{{product.get_edit_url}}">Edit</a>
+          </div>
+      </div>
+  </div>
+  {% endfor %}
+</div>    
+{% endblock %}

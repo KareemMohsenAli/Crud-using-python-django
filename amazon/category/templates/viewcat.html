@@ -1,0 +1,17 @@
+{% extends 'base2.html'%}
+{%block 'maincontent' %}
+<div class="text-center d-flex justify-content-center mt-2">
+  <div class="card " style="width: 24%!important;">
+      <div class="card-body">
+          <h5 class="card-title">{{category.name}}</h5>
+          <p class="card-text"> description : {{category.description}} </p>
+          <div>
+            <img class="rounded-circle" width="200" height="200" src="{{category.get_image_url}}" alt="">
+          </div>
+          <a class="btn btn-danger mt-2" href="{% url 'Categories'%}">back</a>
+      </div>
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,55 @@
+<!-- {{% url 'delete' product.id %}} -->
+
+
+
+
+
+
+
+
+
+
+ <!-- <div class="mb-3">
+    <label  class="form-label">Title</label>
+    <input type="text" name="name" class="form-control"/>
+  </div>
+    <div class="mb-3">
+    <label  class="form-label">Description</label>
+    <input type="text" name="description"  class="form-control"/>
+  </div>
+    <div class="mb-3">
+    <label  class="form-label">price</label>
+    <input type="number"   name="price"  class="form-control"/>
+  </div>
+    <div class="mb-3">
+    <label  class="form-label">Privacy </label>
+        <div class="form-check">
+  <input class="form-check-input"  value='1' type="radio" name="privacy" id="flexRadioDefault1">
+  <label class="form-check-label" for="flexRadioDefault1">
+    Public
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input"  value='2' type="radio" name="privacy" id="flexRadioDefault2" checked>
+  <label class="form-check-label" for="flexRadioDefault2">
+    Private
+  </label>
+</div>
+  </div>
+
+</div>
+    <div class="mb-3">
+    <label  class="form-label">Image</label>
+    <input type="file" name='image' class="form-control"/>
+  </div>
+
+
+  <div class="mb-3">
+    <label  class="form-label">Category</label>
+    <select class="form-select" name='category' aria-label="Default select example">
+      <option selected disabled>Open this select menu</option>
+      {% for categories in cat %}
+      <option value="{{cat.id}}">{{categories}}</option>
+      {% endfor %}
+    </select>
+  </div>

@@ -1,0 +1,91 @@
+{%extends 'base2.html'%}
+
+{%block 'product' %}
+    <a href="{% url 'CreateCategory' %}" class="btn btn-info mt-5"> Create new Category </a>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Description</th>
+          <th scope="col">Image</th>
+          <th scope="col">View</th>
+          <th scope="col">Edit</th>
+          <th scope="col">Delete</th>
+     
+        </tr>
+    <!-- tare2et listview el data bettba3t 3an tare2 7aga esmha object_list -->
+        {% for allcat in object_list %}
+            <tr>
+                <td> {{allcat.id}}</td>
+                <td> {{allcat.name}}</td>
+                <td> {{allcat.discription}}</td>
+                <td> <img class="rounded-circle" width="50" height="50" src="{{allcat.get_image_url}}" alt=""></td>
+                <td> <a  class="btn btn-info me-2" href="{{allcat.get_show_url}}">View</a> </td>
+                <td> <a class="btn btn-warning" href="{{allcat.get_edit_url}}">Edit</a></td>
+                <td> <a class="btn btn-danger me-2" href="{{allcat.get_delete_url}}">delete</a></td>
+    
+            </tr>
+        {% endfor %}
+    
+      </thead>
+    
+    </table>
+{% endblock %}
+
+
+
+
+
+<!-- 
+<a href="" class="btn btn-primary"> Create new Category </a>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Description</th>
+      <th scope="col">Show</th>
+        <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
+    </tr>
+    {% for cat in category %}
+        <tr>
+            <td> {{cat.id}}</td>
+            <td> {{cat.name}}</td>
+            <td> {{cat.discription}}</td>
+            <td> <img width="200" height="200" src="{{allcat.get_image_url}}" alt=""></td>
+            <td> <a  class="btn btn-danger me-2" href="{{allcat.get_show_url}}">View</a> </td>
+            <td> <a class="btn btn-danger" href="{{allcat.get_edit_url}}">Edit</a></td>
+            <td> <a class="btn btn-danger me-2" href="{{allcat.get_delete_url}}">delete</a></td>
+
+        </tr>
+    {% endfor %}
+
+  </thead>
+
+</table>
+
+
+ -->
+
+
+
+
+
+
+
+
+
+<!-- <div class="card-body"> -->
+    <!-- {{myproducts}} -->
+    <!-- <h5 class="card-title">{{allcat.name}}</h5>
+    <img width="200" height="200" src="{{allcat.get_image_url}}" alt="">
+    <p  class="card-text "> category : {{allcat.discription}} </p>
+    <div class="d-flex justify-content-center align-items-center">
+      <a  class="btn btn-danger me-2" href="{{allcat.get_show_url}}">View</a> 
+      <a class="btn btn-danger me-2" href="{{allcat.get_delete_url}}">delete</a>
+      <a class="btn btn-danger" href="{{allcat.get_edit_url}}">Edit</a>
+    </div>
+</div>
+</div> -->

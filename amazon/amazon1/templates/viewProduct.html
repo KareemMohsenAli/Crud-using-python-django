@@ -1,0 +1,30 @@
+{% extends 'base.html'%}
+{%block 'maincontent' %}
+<div class="row text-center d-flex justify-content-center mt-2">
+  <div class="card " style="width: 24%!important;">
+      <div class="card-body">
+        <img width="200" height="200" src="{{list.get_image_url}}" alt="">
+          <h5 class="card-title">{{list.name}}</h5>
+          <p class="card-text"> price : {{list.price}} </p>
+          <p class="card-text"> description : {{list.description}} </p>
+          <p class="card-text"> category : {{list.category}} </p>
+          <a class="btn btn-danger" href="{% url 'products'%}">back</a>
+      </div>
+  </div>
+</div>
+
+
+<!-- {{list.category.category_products.all}} -->
+<h4 class="text-center mt-3">see more</h4>
+<div class="d-flex justify-content-center ">
+{% for p in list.category.category_products.all %}
+{% if p.id != list.id %}
+    <a class="btn btn-danger me-2 " href="{{p.get_show_url}}">{{p}}</a>
+{%endif%}
+{% endfor %}
+</div>
+
+{% endblock %}
+
+{%block 'main' %}
+{% endblock %}
